@@ -21,3 +21,8 @@ cyan = "\x1b[36m";
 blue = "\x1b[34m";
 
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
+//Access Log Stream 
+
+let date = new Date()
+let formatedDate = date.toISOString().split('T')[0]
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs', 'access', `${formatedDate}-access.log`), { flags: 'a', interval: '1d' })
