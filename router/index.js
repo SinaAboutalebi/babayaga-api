@@ -10,6 +10,9 @@ const router = express.Router();
 const rconRouter = require('./rcon');
 router.use('/rcon', rconRouter);
 
+const faceitRouter = require('./faceit');
+router.use('/faceit', faceitRouter);
+
 
 module.exports = router;
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
