@@ -1,0 +1,11 @@
+{
+  "name": "babayaga-api",
+  "version": "1.0.0",
+  "description": "all in one api ",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "Great 0P",
+  "license": "MIT"
+}
