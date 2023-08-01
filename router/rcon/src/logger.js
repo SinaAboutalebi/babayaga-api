@@ -9,17 +9,21 @@ const path = require("path");
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //Logger Function
 
-const logPath = path.join(
-  __dirname,
-  "..",
-  "..",
-  "..",
-  "logs",
-  "rcon",
-  `${process.pid}-rcon.log`
-);
+let date = new Date();
+let formatedDate = date.toISOString().split("T")[0];
 
-let log_file = fs.createWriteStream(logPath, { flags: "w" });
+var log_file = fs.createWriteStream(
+  path.join(
+    __dirname,
+    "..",
+    "..",
+    "..",
+    "logs",
+    "rcon",
+    `${formatedDate}-rcon.log`
+  ),
+  { flags: "a", interval: "1d" }
+);
 
 module.exports = async (d) => {
   log_file.write("[" + time.now() + "] " + util.format(d) + "\n");
