@@ -5,6 +5,8 @@ const express = require("express");
 const router = express.Router();
 const rcon = require("rcon");
 
+const logger = require('./src/logger');
+
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
 //Routes
 
@@ -42,6 +44,7 @@ router.post("/", async (req, res) => {
           })
           .on("response", async function (str) {
             if (str.length > 1) {
+            logger(server+":"+port+" -=- "+req.body.cmd+" - "+str)
               return res.status(200).send({
                 server: req.body.sv,
                 port: req.body.port,
@@ -51,6 +54,7 @@ router.post("/", async (req, res) => {
             }
           })
           .on("error", async function (err) {
+            logger(server+":"+port+" -=- "+req.body.cmd+" - "+err.toString())
             return res.status(401).send({
               server: req.body.sv,
               port: req.body.port,
