@@ -54,7 +54,7 @@ app.use("*", (req, res) => {
 
 app.listen(process.env.PORT, async () => {
   console.log(magenta, "[📶]Server Is Running Properly ....");
-  console.log(cyan, " [⚙️]Port : ", process.env.PORT);
+  console.log(cyan, "[⚙️]Port : ", process.env.PORT);
 });
 
 //---------------------------🤍🍷 'Zer0Power 🍷🤍---------------------------//
