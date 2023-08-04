@@ -1,0 +1,8 @@
+{
+    "platform":"node",
+    "port":3545,
+    "app":"babayaga",
+    "node" :{
+        "version": "latest"
+    }
+}
